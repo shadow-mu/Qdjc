@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jquery.min.js"></script>
+	</head>
+	<body>
+		<ol>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li class="item">我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		</ol>
+		<ul>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		    <li>我是ol 的li</li>
+		</ul>
+		<div class="current">俺有current</div>
+		<div>俺木有current</div>
+		<script>
+			$(function(){
+				var index=2;
+				// siblings 所以兄弟除了自己
+				$("ol .item").siblings("li").css("color","pink");
+				$("ul li:eq(1)").css("color","red")
+				$("ul li").eq(index).css("color","green");
+				
+			 	console.log($("div:first").hasClass("current")) 
+				console.log($("div:last").hasClass("current")) 
+			})
+		</script>
+	</body>
+</html>

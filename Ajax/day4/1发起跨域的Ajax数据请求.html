@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="lib/jquery.js"></script>
+	</head>
+	<body>
+		<script>
+			//同源 协议域名端口一致反之是跨域、
+			//浏览器对跨域的请求
+			//数据能请求浏览器能接受但是被拦截下来了页面无法使用
+			//跨域请求方案 JSONP CORS
+			// JSONP只支持get 兼容性好
+			//CORS w3c标准 支持get post请求缺点不兼容底版本浏览器
+			$.ajax({
+			  method: 'GET',
+			  url: 'http://ajax.frontend.itheima.net:3006/api/jsonp',
+			  data: {
+			    name: 'zs',
+			    age: 20
+			  },
+			  success: function (res) {
+			    console.log(res)
+			  }
+			})  
+		</script>
+	</body>
+</html>

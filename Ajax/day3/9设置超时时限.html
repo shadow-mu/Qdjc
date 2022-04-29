@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//XMLHttpRequest Levenl2之前是旧版
+			//新特性
+			//可以设置HTTP请求时间
+			//可以使用FormData对象管理表单数据
+			//可以上传啊文件
+			//可以获取数据传输的进度信息
+			var xhr=new XMLHttpRequest();
+			// 设置HTTP请求时间 有ontimeout事件指定超时以后指定回调函数
+			xhr.timeout=3000;
+			xhr.ontimeout=function(){
+				alert('请求超时')
+			}
+			xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks')
+			xhr.send()
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===4&&xhr.status===200){
+					console.log(xhr.responseText)
+				}
+			}
+			
+		</script>
+	</body>
+</html>

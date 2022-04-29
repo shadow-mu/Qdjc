@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// ###1 - 基础练习
+			//     创建一个电脑对象
+			//     ​有颜色(color)、重量(weight)、品牌(brand)、型号(type)等属性，
+			//     ​有看电影(watch)、听音乐(listen)、打游戏(play)和敲代码(coding)等方法。
+			//     题目描述：
+			//     ​颜色、重量、品牌、型号是属性；看电影、听音乐、打游戏、敲代码是方法，在调用方法时分别打印 “我在看电影/听音乐/打游戏/敲代码”
+			
+			// var dn={
+			// 	color:'red',
+			// 	weight:500,
+			// 	brand:'小米',
+			// 	type:"y700",
+			// 	watch:function(){
+			// 		console.log('我在看电影');
+			// 	},
+			// 	listen:function(){
+			// 		console.log('我在听音乐');
+			// 	},
+			// 	play:function(){
+			// 		console.log('我在打游戏');
+			// 	},
+			// 	coding:function(){
+			// 		console.log('我在敲代码');
+			// 	}
+			// }
+			// console.log(dn.color);
+			// console.log(dn["brand"]);
+			// dn.watch();
+			
+			// 2.遍历下面对象
+			
+			// var dog = {
+			//     dName:"coco",
+			//     type:"阿拉斯加犬",
+			//     age:" 5岁",
+			//     color:"棕红色"
+			// };
+			// for(k in dog){
+			// 	console.log(k);
+			// 	console.log(dog[k]);
+			// }
+			
+			
+			
+			//请描述下面代码的输出结果以及运行原因
+			
+			// var num = 1;
+			// function demo(){
+			//     console.log(num);
+			//     function demoSon(){
+			//         console.log(num);
+			//         num = 3;
+			//         console.log(num);
+			//     }
+			//     var num = 2
+			//     demoSon();
+			// }
+			// demo();
+			
+			// var num;
+			// function demo(){
+			// 	var num 
+			//     function demoSon(){
+			//         console.log(num);
+			//         num = 3;
+			//         console.log(num);
+			//     } 
+			// 	console.log(num);
+			//     num = 2
+			//     demoSon();
+			// }
+			// num = 1;
+			// num = 2;
+			// demo();
+			
+			// 请使用arguments完成函数getResult，实现得到输入的所有的数值中的最小值、最大值、平均数、总和等功能
+			// ​作业描述： ​ 函数名：getResult ​ 函数调用方式：getResult(数值1，数值2，数值3，数值4.....) ​ 
+			// 函数功能：返回值是一个对象，这个对象有sum, max, min, averages等属性，分别表示实参的总和、最大值、最小值、平均数等
+			// function getResult(){
+			// 	var sum=0;
+			// 	var max=arguments[0];
+			// 	var min=arguments[0];
+			// 	var averages=0;
+				
+			// 	for(var i=0;i<arguments.length;i++){
+			// 		if(i=0){
+			// 			sum+=arguments[i];
+			// 		}
+			// 		 else if(arguments[i]>max){
+			// 			max=arguments[i];
+			// 		}
+			// 		else if(arguments[i]<max){
+			// 			min=arguments[i];
+			// 		}
+			// 		else if(i=0){
+			// 			averages=sum/arguments.length-1;
+			// 		}
+			// 	}
+			// 	var sz={
+			// 		sum:sum,
+			// 		max:max,
+			// 		min:min,
+			// 		averages:averages
+			// 		}
+			// 	return sz;
+			// }
+			
+			// console.log(getResult(1, 2, 3, 4, 5));
+				
+			
+			
+			// 书写一个函数，判断指定数据是否存在于指定数
+			// 要求：
+			    // 函数名称：exist
+			    // 函数调用方式：exist(数据data，数组arr)
+			    // 函数功能：判断“数据data”是否存在于“数组arr”中，如果是函数返回值为true，如果不是函数返回值为false
+			// function exist(data,arr){
+			// 	var f=false;
+			// 	for(var i=0;i<arr.length;i++){
+			// 		if(parseInt(data)==parseInt(arr[i])){
+			// 			f=true;
+			// 		}
+			// 	}
+			// 	return f;
+			// }
+			// console.log(exist(2,[1,2,3]))
+				
+			
+			// 以下有两个数组，一个数组arr是班级里所有的学员的名称，一个数组currentArr是提交了每日反馈的学员名单，请创建一种算法，把未提交每日反馈的学员筛选出来
+			// var arr = ["张瑞淑", "徐海涛", "谢岗岗", "薛鹏", "魏明杨", "党婷", "熊飞", "郑翠翠", "李航卫", '张大大', "屈涛", "汪孝双", "代攀飞", "武志钰"];
+			// var currentArr = ["张瑞淑", "徐海涛", "谢岗岗", "魏明杨", "党婷", "熊飞", "郑翠翠"];
+			// function arrMath(arr,currentArr){
+			// 	var flag = false;
+			// 	var newArr = new Array();
+			// 	for(var i=0;i<arr.length;i++){
+			// 		for(var j=0;j<currentArr.length;j++){
+			// 			if(arr[i] != currentArr[j]){
+			// 				newArr[newArr.length] = arr[i];
+							
+			// 			}
+			// 		}					
+			// 	}
+			// 	return newArr;
+			// }	
+			
+			// var xinde = arrMath(arr, currentArr);
+			// console.log(xinde);
+			
+			
+			// 方法一：
+			// function arrMath(arr,currentArr){
+			// 	var flag = false;//表示在已经提交作业的数组中去匹配，匹配到就false，没有找到就是true
+			// 	var newArr = new Array(); //存放帅选出来的元素
+			// 	for(var i=0; i<arr.length; i++){
+			// 		for(var j=0; j<currentArr.length; j++){
+			// 			if(arr[i] === currentArr[j]){
+			// 				flag = false;
+			// 				break; //找到匹配的之后就不必继续匹配了
+			// 			}else{
+			// 				flag = true;
+			// 			}
+			// 		}
+			// 		if(flag === true){
+			// 				newArr[newArr.length] = arr[i];
+			// 			}
+			// 	}
+			// return newArr;
+			
+			// }
+			// var xinde = arrMath(arr,currentArr);
+			// console.log(xinde);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+			   position: absolute;
+			   left: 0;
+			   top: 200px;
+			   display: block;
+			   width: 150px;
+			   height: 150px;
+			   background-color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<button class="btn5">500</button>
+		<button class="btn8">800</button>
+		<script>
+			var div=document.querySelector('div');
+			function animate(obj, target,callback) {
+			    var timer = setInterval(function() {
+				// var step= Math.ceil((target-div.offsetLeft)/10)
+				var step= (target-div.offsetLeft)/10
+				step=step>0? Math.ceil(step) :Math.floor(step);
+			        if (obj.offsetLeft == target) {
+			            // 停止动画 本质是停止定时器
+			            clearInterval(timer);
+						if(callback){
+							callback();
+						}
+			        }
+			        obj.style.left = obj.offsetLeft +step+ 'px';
+			
+			    }, 15);
+			}
+			var btn5=document.querySelector('.btn5');
+			var btn8=document.querySelector('.btn8');
+			// 调用函数
+			// animate(div, 300);
+			
+			btn5.addEventListener('click',function(){
+				animate(div, 500,function(){
+					div.style.backgroundColor='red'
+				});
+				
+			})
+			btn8.addEventListener('click',function(){
+				animate(div, 800);
+				
+			})
+		</script>
+	</body>
+</html>

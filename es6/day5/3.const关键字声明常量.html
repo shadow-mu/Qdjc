@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 使用const关键字声明的常量具有块级作用域
+			// if(true){
+			// 	const a =10
+			// 	if(true){
+			// 		const a=20
+			// 		console.log(a)
+			// 	}
+			// 	console.log(a)
+			// }
+			// console.log(a)
+			// 使用const关键字声明的常量必须赋初始值
+			// const PI;//报错
+			// 常量声明后值不可更改 
+			const PI=3.1415926
+			// PI=100; //报错常量声明后值不可更改指的值是内存地址
+			const ary=[100,200]//对于复杂数据类型值可以更改
+			ary[0]=123 //
+			// arr=[1,2]  //报错 重新赋值不可以
+			console.log(ary)
+			
+			
+		</script>
+	</body>
+</html>

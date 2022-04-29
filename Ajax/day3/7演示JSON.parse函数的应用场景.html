@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var xhr=new XMLHttpRequest();
+			xhr.open('get','http://www.liulongbin.top:3006/api/getbooks')
+			xhr.send()
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					console.log(xhr.responseText)
+					console.log(typeof xhr.responseText)
+					//json字符串转换对象字符串不好操作
+					var result=JSON.parse(xhr.responseText)
+					
+					console.log(result)
+					//序列化 把数据对象转换为字符串的过程 JSON.stringify()
+					//反序列化 把字符串转换为数据对象的过程 JSON.parse
+				}
+			}
+		</script>
+	</body>
+</html>

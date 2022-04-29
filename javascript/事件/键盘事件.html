@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			document.addEventListener('keyup',function(e){
+				console.log('up'+e.keyCode)
+				if(e.keyCode===65){
+					alert('你按下的a键')
+				}
+							
+				})
+			document.addEventListener('keypress',function(e){
+				console.log('press'+e.keyCode)
+			})
+		</script>
+	</body>
+</html>

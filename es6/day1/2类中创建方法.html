@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			class mx{
+				constructor(uname,age) {
+				    this.uname=uname;
+					this.age=age;
+				}
+				sing(song){
+					// console.log('666')
+					console.log(this.uname+song)
+				}
+			}
+		var ldh=new mx('刘德华',18);
+		var zxy=new mx('张学有',20);
+		console.log(ldh)
+		console.log(zxy)
+		ldh.sing('666');
+		zxy.sing('666');
+		</script>
+	</body>
+</html>

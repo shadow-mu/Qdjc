@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//XMLHttpRequest Levenl2之前是旧版
+			//新特性
+			//可以设置HTTP请求时间
+			//可以使用FormData对象管理表单数据
+			//可以上传啊文件
+			//可以获取数据传输的进度信息
+			
+			// FormData
+			// 1.新建FormData对象
+			var fd=new FormData();
+			// 2.为FormData添加表单项
+			fd.append('uname','zs')
+			fd.append('upass','123456')
+			// 创建xhr对象
+			var xhr=new XMLHttpRequest();
+			//指定请求类型和url地址
+			xhr.open('POST','http://www.liulongbin.top:3006/api/formdata')
+			//直接提交FormData对象，这与提交网页表单的效果完全一样
+			xhr.send(fd)
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===4&&xhr.status===200){
+					console.log(JSON.parse(xhr.responseText))
+				}
+			}
+		</script>
+	</body>
+</html>

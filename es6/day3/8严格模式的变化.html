@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		'use strict';
+		//1.变量名必须先声明
+		// num=10;
+		// console.log(num)
+		// var num=10
+		// console.log(num)
+		// delete num;
+		//2.不能随意删除已经声明好的变量
+		function fn(){
+			console.log(this)//undefined
+		}
+		fn()
+		//3.严格模式下作用域中函数的this是undefined
+		// function Star(){
+		// 	this.sex='男'
+		// }
+		// // Star();
+		// // console.log(window.sex)
+		// var ldh=new Star();
+		// console.log(ldh)
+		//严格模式下如果构造函数不加new调用,this指向undefined如果赋值会报错
+		// setTimeout(function(){
+		// 	console.log(this)
+		// },3000);
+		//严格模式下定时器this指向还是window
+		//事件对象还是指向调用者
+		// function fns(a,a){
+		// 	console.log(a+a)
+		// };
+		// fns(1,2)
+		//不允许函数参数重名
+		// function Fn(){
+			
+		// }
+		//不允许放到非函数代码块比如if for
+		</script>
+	</body>
+</html>

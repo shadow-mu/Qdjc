@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="lib/jquery.js"></script>
+	</head>
+	<body>
+		<button id="btnJSONP">发起JSONP数据请求</button>
+		<script>
+			$(function() {
+				$('#btnJSONP').on('click', function() {
+					$.ajax({
+						url:'http://ajax.frontend.itheima.net:3006/api/jsonp?address=北京&location=顺义',
+						//如果使用$.ajax()发起JSONP请求，必须指定dataType:'jsonp'
+						dataType:'jsonp',
+						//自定义参数的名称
+						jsonp:'cb',
+						//自定义回调函数的名称
+						jsonpCallback:'abc',
+						success: (res) => {
+							console.log(res)
+						}
+						//默认情况下发起jsonp请求会自动携带一个callback=jQueryxxx的参数
+						// jQueryxxx是自动随机生成的
+						
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="lib/jquery.js"></script>
+	</head>
+	<body>
+		<script>
+			//jsonp实现原理由于浏览器同源策略的限制网页中无法通过ajax请求
+			// 但<script>标签不受同源策略的影响可以通过src属性请求非同源的脚本
+			//通过script标签的src属性请求跨越的接口并通过函数调用的形式，接受请求的数据
+			function success(data){
+				console.log('拿到了data数据')
+				console.log(data)
+			}
+			
+		</script>
+		//
+		<script src="js/getdate.js?callback=success"></script>
+	</body>
+</html>

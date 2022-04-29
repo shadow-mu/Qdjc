@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//分组的形式提取
+			var str='<div>{{name}}</div>'
+			var pettern=/{{([a-zA-Z]+)}}/
+			var result=pettern.exec(str)
+			console.log(result)
+		</script>
+	</body>
+</html>

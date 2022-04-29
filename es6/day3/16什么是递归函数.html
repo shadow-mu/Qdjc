@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//递归函数 函数内部调用自己这个函数就是递归函数
+			var num=1
+			function fn(){
+				console.log("666")
+				if(num==6){
+					return;
+				}
+				num++;
+				fn();
+			}
+			fn()
+		</script>
+	</body>
+</html>

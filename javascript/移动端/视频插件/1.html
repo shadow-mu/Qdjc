@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#modelView {
+			    background-color: #DDDDDD;
+			    z-index: 0;
+			    opacity: 0.7;
+			    height: 100%;
+			    width: 100%;
+			    position: relative;
+			}
+			
+			.playvideo {
+			    padding-top: auto;
+			    z-index: 9999;
+			    position: relative;
+			    width: 300px;
+			    height: 200px;
+			}
+		</style>
+		 <link rel="stylesheet" href="zy.media.min.css">
+	</head>
+<body>
+
+    <div class="playvideo">
+        <div class="zy_media">
+            <video data-config='{"mediaTitle": "测试视频--视频"}'>
+        	<source src="mov.mp4" type="video/mp4">
+      	  您的浏览器不支持HTML5视频
+   	 </video>
+
+        </div>
+        <div id="modelView">&nbsp;</div>
+    </div>
+    <script src="zy.media.min.js"></script>
+    <script>
+        zymedia('video', {
+            autoplay: true
+        });
+    </script>
+</body>
+</html>

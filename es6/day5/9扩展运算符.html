@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>1</div>
+		<div>4</div>
+		<div>3</div>
+		<div>6</div>
+		<div>2</div>
+		<div>5</div>
+		<script>
+			// 扩展运算符可以将数组拆分成以逗号分隔的参数序列
+			// let ary=['a','b','c']
+			// ...ary;//'a','b','c'
+			// console.log(...ary)//里面的点，被当参数分隔符了
+			// console.log("a", "b", "c")
+			
+			// 扩展运算符应用于数组合并
+			// 方法一
+			// let ary1=[1,2,3]
+			// let ary2=[4,5,6]
+			// let ary3=[...ary1,...ary2]
+			// console.log(ary3)
+			//方法2
+			// let ary1=[1,2,3]
+			// let ary2=[4,5,6]
+			// // push能接受多个元素如 1,2,3
+			// ary1.push(...ary2)//不能直接放数组能放拆分的
+			// console.log(ary1)
+			
+			// 利用扩展运算符将伪数组转换为真正的数组
+			let divs=document.querySelectorAll('div')
+			console.log(divs)
+			var ary=[...divs]
+			console.log(ary)
+			ary.push('a')
+			console.log(ary)
+		</script>
+	</body>
+</html>

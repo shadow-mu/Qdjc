@@ -1,0 +1,38 @@
+.<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Star(uname,age){
+				this.uname=uname;
+				this.age=age;
+			}
+			// Star.prototype.sing=function(){
+			// 	console.log('我会唱歌')
+			// }
+			// Star.prototype.movie=function(){
+			// 	console.log('我会演电影')
+			// }
+			Star.prototype={
+				//很多情况下我们需要手动利用constructor这个属性指回原来的构造函数
+				constructor:Star,
+				sing:function(){
+					console.log('我会唱歌')
+				},
+				movie:function(){
+					console.log('我会演电影')
+				}
+			}
+			var ldh=new Star('刘德华','18')
+			var zxy=new Star('张学友','18')
+			// console.log(Star.prototype);
+			// console.log(ldh.__proto__);
+			console.log(Star.prototype.constructor);
+			console.log(ldh.__proto__.constructor);
+			
+		</script>
+	</body>
+</html>

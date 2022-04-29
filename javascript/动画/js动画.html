@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background-color: #008000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<script>
+			var box=document.querySelector('.box');
+			var timer=setInterval(function(){
+				if(box.offsetLeft>=400){
+					clearInterval(timer);
+				}
+				box.style.left=box.offsetLeft+10+"px";
+			},30)
+		</script>
+	</body>
+</html>

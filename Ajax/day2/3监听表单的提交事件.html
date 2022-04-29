@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<form action="/login" id="f1">
+		  <input type="text" name="user_name" />
+		  <input type="password" name="password" />
+		  <button type="submit">提交</button>
+		</form><strong></strong>
+		<script>
+			$(function(){
+				//第一种方式
+				// $('#f1').submit(function(e){
+				// 	alert('监听到了表单提交事件')
+				
+				// })
+				//第二种方式
+				$('#f1').on('submit',function(){
+					alert('监听到了表单提交事件')
+				
+				})
+			})
+			
+		</script>
+	</body>
+</html>

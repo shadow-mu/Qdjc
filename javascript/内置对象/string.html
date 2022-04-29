@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 1.4 字符串操作
+			// 1.（字符）判断一个字符（比如”a”）是否出现在另一个字符（比如”2340sadfj2affa2”）中，如果出现，并求出现了几次。
+			// var a="2340sadfj2affa2";
+			// var n=a.indexOf("a");
+			// if(n==-1){
+			// 	alert("没出现");
+			// }else{
+			// 	 alert("出现了");
+			// }
+			// var count=0;
+			// var arr=a.split("");
+			// for(var i=0;i<arr.length;i++){
+			// 	if(arr[i] == 'a'){
+			// 	        count++;
+			// 	    }
+			// 	}
+			// document.write("出现了"+count+"次");
+			
+			
+			//     （字符，偏难）获取一个长文件路径（比如”E:\itcast\class\php\js\day2\abc.html”）中的文件名及其后缀（结果应该为”abc”和”html”）。
+			
+			// var str = "E:\\itcast\\class\\php\\js\\day2\\abc.html";
+			// var gang = str.lastIndexOf("\\");
+			// var dian = str.lastIndexOf(".");
+			// var ming = str.substring(gang+1,dian);
+			// var houzhui = str.substr(dian+1);
+			// document.write("文件名"+ming+"后缀"+houzhui);
+			
+			
+			//字符，偏难利用var s1 = prompt(“请输入任意字符”,””)可以获取用户输入的字符（存到变量s1中了），试编程将用户输入的字符“反转顺序”并首尾字母转为大写，其他字母转为小写后alert出来。
+			// var s1 = prompt("请输入任意字符")
+			//  var arr = s1.split("");//转成数组
+			//  var newArr=arr.reverse();
+			// for(var i=0;i<newArr.length;i++){
+			//     if(i==0||i==newArr.length-1){
+			//         newArr[i] = newArr[i].toUpperCase();
+			//     }else{
+			//         newArr[i] = newArr[i].toLowerCase();
+			//     }
+			// }
+			// var str = newArr.join("");
+			//  document.write(str);
+			
+			// 4.（Math，逻辑）编写一个函数，带一个参数n，在页面上输出1～n（n>1）之间所有能同时被3和5整除的偶数，并要求每行只输出6个（即超过6个后要换行再输出）。
+			// function math(n){
+			// 	sum=0;
+			// 	for(var i=1;i<n;i++){
+			// 		if(i%3==0 && i%5==0 && i%2==0){
+			// 			document.write(i+' ');
+			// 			sum++;
+			// 			if(sum%6==0){
+			// 				 document.write("<br />");
+			// 			}
+			// 		}
+			// 	}
+			// }
+			// math(1000)
+			
+			// 5.（Date）打开页面的时候在页面上使用中文显示当天的日期和星期（即“星期几”）。
+				// 格式化日期 年月日
+				 //    var date = new Date();
+				 //    console.log(date.getFullYear()); // 返回当前日期的年  2019
+				 //    console.log(date.getMonth() + 1); // 月份 返回的月份小1个月   记得月份+1 呦
+				 //    console.log(date.getDate()); // 返回的是 几号
+				 //    console.log(date.getDay()); // 3  周一返回的是 1 周六返回的是 6 但是 周日返回的是 0
+				 //    // 我们写一个 2019年 5月 1日 星期三
+				 //    var year = date.getFullYear();
+				 //    var month = date.getMonth() + 1;
+				 //    var dates = date.getDate();
+				 //    var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+				 //    var day = date.getDay();
+				 //    console.log('今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+					// document.write('今天是：' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+					
+					
+			// 2.1 随机选学员
+			// ​ 从以下学员名单中随机选出4个学员：
+			// ​ var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"]；
+			// ​ 注意：不要有重复的学员
+			// var arr = ["鹿晗", "王三", "彭于晏", "刘德华", "张学友", "张三丰", "乔峰"];
+			// function getRandom(min, max) {
+			//     return Math.floor(Math.random() * (max - min + 1) + min);
+			// }
+			// var newarr=[];
+			// var numarr=[];
+			// for(var i=0;i<11;i++){
+			// 	var num = getRandom(0, 6);
+			// 	if(numarr.indexOf(num)==-1){
+			// 		numarr[numarr.length]=num;
+			// 		newarr[newarr.length]=arr[num];
+			// 	}
+			// 	if(numarr.length==4){
+			// 		break;
+			// 	}
+			// }
+			// console.log(newarr);
+			// console.log(numarr);
+			
+			// 2.2 随机排序
+			// ​ 对以下学员随机排序，生成一个新数组：
+			var arr = ["鹿晗", "王三", "彭于晏", "刘德华", "张学友", "张三丰", "乔峰"];
+			function getRandom(min, max) {
+			    return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+			var newarr=[];
+			var numarr=[];
+			for(var i=0;i<11;i++){
+				var num = getRandom(0, 6);
+				if(numarr.indexOf(num)==-1){
+					numarr[numarr.length]=num;
+					newarr[newarr.length]=arr[num];
+				}
+			}
+			console.log(newarr);
+			console.log(numarr);
+			</script>
+	</body>
+</html>

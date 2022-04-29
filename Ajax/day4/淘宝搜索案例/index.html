@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入页面的基本样式 -->
+		<link rel="stylesheet" href="./css/search.css" />
+		<!-- 导入 jQuery -->
+		<script src="./lib/jquery.js"></script>
+		<script src="lib/template-web.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Logo -->
+			<img src="./images/taobao_logo.png" alt="" class="logo" />
+
+			<div class="box">
+				<!-- tab 栏 -->
+				<div class="tabs">
+					<div class="tab-active">宝贝</div>
+					<div>店铺</div>
+				</div>
+				<!-- 搜索区域（搜索框和搜索按钮） -->
+				<div class="search-box">
+					<input type="text" id="ipt" class="ipt" placeholder="请输入要搜索的内容" /><button class="btnSearch">
+						搜索
+					</button>
+				</div>
+				<!-- 搜索建议 -->
+				<div id="suggest-list"></div>
+			</div>
+		</div>
+		<!-- $value代表每个数组 -->
+		<script type="text/html" id="tpl-suggestlist">
+			{{each result}}
+			<div id="suggest-item">{{$value[0]}}</div>
+			{{/each}}
+		</script>
+		<script>
+			//防抖策略 是当事件触发后延迟n秒在执行回调如果在n秒内事件又被触发则重新计时
+			//缓存
+			//节流 可以减少一段时间内事件的触发频率一段时间内无法触发事件
+			$(function() {
+				//定义防抖
+				var timer=null;
+				//定义缓存对象
+				var cacheObj={}
+				//定义防抖函数
+				function debounceSearch(ksyword){
+					// 发起请求
+					timer=setTimeout(function(){
+						getSuggestList(keyword)
+					},500)
+				}
+				//监听文本框keyup事件
+				$('#ipt').on('keyup', function() {
+					//在触发keyup函数立即清空timer clearTimeout取消定时器
+					clearTimeout(timer)
+					//获取用户输入的内容
+					var keyword = $(this).val().trim()
+					//判断用户输入的是否为空
+					if (keyword == '') {
+						$('#suggest-list').empty().hide()
+						return
+					}
+					//先从缓存里面判断有没有数据
+					if(cacheObj[keyword]){
+						renderSuggestList(cacheObj[keyword])
+						return
+					}
+					//获取搜索建议列表
+					console.log(keyword)
+					debounceSearch(keyword)
+				})
+				function getSuggestList(kw){
+					$.ajax({
+						//请求的url地址 q是用户输入的关键字
+						url:'https://suggest.taobao.com/sug?q=' + kw,
+						dataType:'jsonp',
+						success: (res) => {
+							console.log(res)
+							renderSuggestList(res)
+						}
+					})
+				}
+				//渲染
+				function renderSuggestList(res){
+					//如果没有渲染的数据直接return
+					if(res.result.length<=0){
+						$('#suggest-list').empty().hide()
+						return 
+					}
+					//渲染
+					var tem=template('tpl-suggestlist',res)
+					$('#suggest-list').html(tem).show()
+					
+					//获取用户输入的内容当做键
+					var k=$('#ipt').val().trim()
+					//需要将数据作为值进行缓存
+					cacheObj[k]=res
+					
+				}
+			})
+		</script>
+	</body>
+</html>

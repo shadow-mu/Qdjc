@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.slider-bar {
+				position: absolute;
+				left: 50%;
+				top: 300px;
+				margin-left: 600px;
+				width: 45px;
+				height: 130px;
+				background-color: pink;
+			}
+
+			.w {
+				width: 1200px;
+				margin: 10px auto;
+			}
+
+			.header {
+				height: 150px;
+				background-color: purple;
+			}
+
+			.banner {
+				height: 250px;
+				background-color: skyblue;
+			}
+
+			.main {
+				height: 1000px;
+				background-color: yellowgreen;
+			}
+
+			span {
+				display: none;
+				position: absolute;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<strong>
+			<div class="slider-bar">
+				<span class="goBack">返回顶部</span>
+			</div>
+			<div class="header w">头部区域</div>
+			<div class="banner w">banner区域</div>
+			<div class="main w">主体部分</div>
+		</strong>
+	</body>
+	<script>
+		var sliderbar=document.querySelector('.slider-bar');
+		var banner=document.querySelector('.banner');
+		var goBack=document.querySelector('.goBack');
+		var bennertop=banner.offsetLeft;
+		var sliderbartop=sliderbar.offsetTop-bennertop;
+		var main=document.querySelector('.main');
+		var maintop=main.offsetTop;
+		document.addEventListener('scroll',function(){
+			if(window.pageYOffset>=bennertop){
+				sliderbar.style.position='fixed';
+				sliderbar.style.top='sliderbartop'+'px';
+				
+			}else{
+				sliderbar.style.position='absolute';
+				sliderbar.style.top='300px';
+			}
+			if(window.pageYOffset>=maintop){
+				goBack.style.display='block';
+				
+			}else{
+				goBack.style.display='none';
+			}
+		})
+		// 3.当我们点击了返回顶部的模块，就让窗口滚动到页面的上方
+		goBack.addEventListener("click",function(){
+			// window.scroll(0,0)
+			animate(window,)
+		})
+		function animate(obj, target,callback) {
+				    var timer = setInterval(function() {
+					// var step= Math.ceil((target-div.offsetLeft)/10)
+					var step= (target-window.pageYOffset)/10
+					step=step>0? Math.ceil(step) :Math.floor(step);
+				        if (window.pageYOffset == target) {
+				            // 停止动画 本质是停止定时器
+				            clearInterval(timer);
+							if(callback){
+								callback();
+							}
+				        }
+				       // window.pageYOffset = window.pageYOffset +step+ 'px'; = window.pageYOffset +step+ 'px';
+						window.scroll(0,window.pageYOffset+step)
+				    }, 15);
+				}
+	</script>
+</html>

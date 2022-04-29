@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 弹出输入框输入总的班级人数(num)
+			// 依次输入学生的成绩（ 保存起来 score）， 此时我们需要用到
+			// for 循环， 弹出的次数跟班级总人数有关系 条件表达式 i <= num
+			// 进行业务处理: 计算成绩。 先求总成绩（ sum）， 之后求平均成绩（ average）
+			
+			// var xs=prompt("班级人数");
+			// var zc=0;
+			// var pj=0;
+			// for(var i=1;i<=xs;i++){
+			// 	var cj=prompt('请输入第'+i+"个人成绩");
+			// 	zc=zc+parseFloat(cj);
+			// }
+			// pj=zc/xs;
+			// consol      ☆
+				//     ☆☆☆
+				//   ☆☆☆☆☆
+				// ☆☆☆☆☆☆☆e.log("班级总成绩为"+zc);
+			// console.log("班级平均成绩为"+pj);
+			
+			// 九九乘法表
+			// 一共有9行，但是每行的个数不一样，因此需要用到双重 for 循环
+			// 外层的 for 循环控制行数 i ，循环9次 ，可以打印 9 行  
+			// 内层的 for 循环控制每行公式  j  
+			// 核心算法：每一行 公式的个数正好和行数一致， j <= i;
+			// 每行打印完毕，都需要重新换一行
+			// var str=""
+			// for(var i=1;i<=9;i++){
+			// 	for(var j=1;j<=i;j++){
+			// 		// var str = str + '★';
+			// 		 str+=j+'x'+i+"="+(i*j)+"\t"
+			// 	}
+			// 	str += '\n';
+			// }
+			// console.log(str)
+			
+			
+			// var a=1;
+			// while(a<=100){
+			// 	console.log("这是"+a);
+			// 	a++;
+			// }
+			
+		// 	var a=1;
+		// 	var str =0;
+		// 	while(a<=100){
+		// 		str+=a;
+		// 		a++;
+		// 	}
+		// console.log(str);
+		
+		// var a=prompt("你好");
+		// while(a!=="你好"){
+		// 	a=prompt("你好");
+		// }
+		// alert("你也好")
+		
+		// var a=0;
+		// do{
+		// 	console.log("这是"+a);
+		// 	a++;
+		// }while(a<=100);
+		
+		// var a=1;
+		// var str=0;
+		// do{
+		// 	str+=a
+		// 	a++;
+		// }while(a<=100);
+		// console.log(str);
+		
+		// var a=prompt("你好");
+		// do{
+		// 	a=prompt("你好?")
+		// }while(a!=="你好");
+		// alert("你好呀");
+		
+		// 1. 求1~100 之间， 除了能被7整除之外的整数和 
+		// var a=0;
+		// for(var i=1;i<=100;i++){
+		// 	if (i%7==0){
+		// 		continue;
+		// 	}
+		// 	a+=i;
+		// }
+		// console.log(a);
+		
+		// break 退出整个循环
+		// for (var i = 1; i <= 5; i++) {
+		//     if (i == 3) {
+		//         break;
+		//     }
+		//     console.log('我正在吃第' + i + '个包子');
+		
+		
+		// 1.1 求100以内所有能被3和7整除的数的和
+		// var a=0;
+		// for(var i=1;i<=100;i++){
+		// 	if(i%7==0){
+		// 		continue
+		// 	}
+		// 	a+=i;
+		// }
+		// console.log(a);
+		
+		// 使用for循环打印三角形 ☆ ☆☆ ☆☆☆ ☆☆☆☆ ☆☆☆☆☆
+		// var str="";
+		// for(var i=1;i<=5;i++){
+		// 	for(var a=1;a<=i;a++){
+		// 		document.write("☆"); 
+		// 	}
+		// 	 document.write("&ensp;"); 
+		// }
+		
+		// 打印一个正金字塔，或者倒立的金字塔。
+		// var str="";
+		// for(var i=1;i<=4;++i){
+		// 	for(var a=1;a<=4-i;++a){
+		// 		document.write("&ensp; "); 
+		// 	}
+		// 	 for(var j=1;j<=2*i-1;++j){
+		// 	 	document.write("☆"); 
+		// 	 }
+		// 	  document.write("<br  />");
+		// }
+		
+		  // for (var i = 1; i <= 4; ++i) {
+		  //     // 2.我们根据规律知道。需要用for输出多余的空格
+		  //     for (var k = 1; k <= 4 - i; ++k) {
+		  //         document.write("&ensp; ");
+		  //     }
+		  //     // 1.下面一行是结合2n-1的公式求出每一行的星星数
+		  //     for (var j = 1; j <= 2 * i - 1; ++j) {
+		  //         document.write("☆");
+		  //     }
+		  //     document.write("<br />");
+		  // }
+		  
+		  // 用户登录验证
+		  
+		  //     题目描述：
+		  //         接收用户输入的用户名和密码，若用户名为 “admin” ,且密码为 “123456” ,则提示用户登录成功! 否则，让用户一直输入。
+		  //     题目提示：
+		  //         利用while循环或者do while 循环
+			// var yh=prompt("用户名");
+			// var mm=prompt("密码");
+			// while(yh!=="admin"&&!mm=="123456"){
+			// 	yh=prompt("用户名");
+			// 	mm=prompt("密码");
+			// }
+			// alert("登录成功");
+			
+			
+		 
+		// 简易ATM 
+		// 题目描述：
+		//     里面现存有 100 块钱。
+		//     如果存钱，就用输入钱数加上先存的钱数, 之后弹出显示余额提
+		//     如果取钱，就减去取的钱数，之后弹出显示余额提示框
+		//     如果显示余额，就输出余额
+		//     如果退出，弹出退出信息提示框
+			
+			// var cz=prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+			// var ch=100;
+			// var i=1;
+			// while(i<=10){
+			// 	if(cz==1){
+			// 		ch+=parseFloat(prompt('请输入存钱数额')) ;
+			// 		alert("余额是"+ch)
+			// 		cz=prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+			// 	}
+			// 	if (cz==2){
+			// 		ch-=parseFloat(prompt('请输入取钱数额')) ;
+			// 		alert("余额是"+ch)
+			// 		cz=prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+			// 	}
+			// 	if (cz==3){
+			// 		alert("余额是"+ch)
+			// 		cz=prompt('操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+			// 	}
+			// 	if (cz==4){
+			// 		shuru = false;
+			// 		break;
+			// 	}
+			// }
+		</script>
+	</body>
+</html>

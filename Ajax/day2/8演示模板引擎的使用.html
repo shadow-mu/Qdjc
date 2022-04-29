@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 导入模板引擎 -->
+		<!-- 在window全局多一个函数叫做template('模板的id','渲染的数据') -->
+		<script src="jquery.js"></script>
+		<script src="template-web.js"></script>
+	</head>
+	<body>
+		<div id="container"></div>
+		<!-- 3.定义模板 -->
+		<!-- 3.1模板的html结构必须放在script -->
+		<!-- 输出内容 -->
+		<!-- 1双括号可以输出变量 对象属性 三元表达式 逻辑或 加减乘除 -->
+		<!-- {{value}}{{obj.key}}{{obj['key']}}{{a?a:c}}{{a||b}}{{a+b}} -->
+		<!-- (1)原文输出 如果要输出的value值中包含了html标签结构则需要使用原文输出
+		 才能保证html标签被正常渲染{{@ 输出内容}}
+		 -->
+		 <!-- (2)条件输出如果实现则可以在{{}}中使用if...else if ../if方式输出-->
+		 <!-- {{if value}}内容{{/if}}
+		 {{if v1}}{{else if v2}}{{/if}} -->
+		 <!-- (3)循环输出如果实现循环输出则可以在{{}}内通过each语法循环数组
+		 当前数组的索引值$index进行访问,当前循环项使用$value访问 -->
+		<!-- {{each hobby}}
+		 <li>索引是:{{$index}},循环项{{$value}}</li>
+		 {{/each}} -->
+		
+		<script type="text/html" id="tpl-user">
+			<h1>{{name}}    {{age}}</h1>
+			 {{@text}}
+			 <div>
+				 {{if flag===0}}
+				 flag值是0
+				 {{else if flag===1}}
+				 flag值是1
+				 {{/if}}
+				 <ul>
+					 {{each hobby}}
+					 <li>索引是:{{$index}},循环项{{$value}}</li>
+					 {{/each}}
+				 </ul>
+			 </div>
+			 <h3>{{regTime | dateFormat}}</h3>
+		</script>
+		<script>
+			// 过滤器{{value|处理函数}}输出内容返回值输出
+			// template.defaults.imports.处理函数=function(value){return 处理结果}
+			//定义处理时间的过滤器过滤器放上面不然报错
+			template.defaults.imports.dateFormat=function(data){
+				// console.log(data)
+				var y=data.getFullYear();
+				var m=data.getMonth()+1;
+				var d=data.getDate()
+				return y+'-'+m+'-'+d
+			}
+			//2.定义数据
+			var data={name:'zs',age:20,text:'<h3>测试原文输出<h3>',flag:1,
+			hobby:['吃饭','睡觉','写代码'],regTime:new Date()}
+			//4调用template函数
+			var htmlstr=template('tpl-user',data)
+			console.log(htmlstr)
+			//5填充数据渲染结构
+			$('#container').html(htmlstr)
+			
+		
+		</script>
+	</body>
+</html>

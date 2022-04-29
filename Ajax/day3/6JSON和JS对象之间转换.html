@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/Snipaste_2022-04-26_17-45-30.png"/>
+		<script>
+			// JSON.parse json格式转换为对象
+			var jsonStr = '{"a": "Hello", "b": "world"}'
+			var obj=JSON.parse(jsonStr)
+			console.log(obj)
+			// JSON.stringify 对象转换为json
+			var obj2 = { a: 'hello', b: 'world', c: false }
+			var str=JSON.stringify(obj2)
+			console.log(str)
+			console.log(typeof str)
+		</script>
+	</body>
+</html>

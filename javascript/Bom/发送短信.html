@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		 手机号码： <input type="number"> <button>发送</button>
+		 <script>
+			var input=document.querySelector('input');
+			var btn=document.querySelector('button');
+			getm();
+			times=3;
+			
+			btn.addEventListener('click',getm)
+			function getm(){
+				btn.disabled=true;
+				var time=setInterval(function(){
+					if(times==0){
+						clearInterval(time);
+						btn.disabled=false;
+						btn.innerHTML='发送';
+					}else{
+						btn.innerHTML='还剩下'+times+'秒';
+						times--;
+					}
+				},1000)
+			}
+		 </script>
+	</body>
+</html>

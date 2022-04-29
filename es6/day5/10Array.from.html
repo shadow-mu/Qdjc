@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// var arrayLike = {
+			// 	"0": "张三",
+			// 	"1": "李四",
+			// 	"2": "王五",
+			// 	"length": 3
+			// }
+			// var ary= Array.from(arrayLike)//Array.from伪数组转换为数组
+			// console.log(ary)
+			//Array.from(数组，函数)函数有个形参代表需要处理的值
+			var arrayLike = {
+				"0": "1",
+				"1": "3",
+				"length": 2
+			}
+			var ary=Array.from(arrayLike,item=>item*2	)
+			console.log(ary)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/template.js"></script>
+	</head>
+	<body>
+		<div id="user-box"></div>
+		<script type="text/html" id="tpl-user">
+		  <div>姓名：{{name}}</div>
+		  <div>年龄：{{ age }}</div>
+		  <div>性别：{{  gender}}</div>
+		  <div>住址：{{address  }}</div>
+		</script>
+		<script>
+			// 定义数据
+			var data = { name: 'zs', age: 28, gender: '男', address: '北京顺义马坡' }
+			// 定义模板引擎
+			var htmlstr=template('tpl-user',data)
+			//渲染结构
+			document.querySelector('#user-box').innerHTML=htmlstr
+		</script>
+	</body>
+</html>

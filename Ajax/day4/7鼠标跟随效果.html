@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="lib/jquery.js"></script>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			#angel {
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="./angel.gif" alt="" id="angel" />
+		<script>
+			$(function() {
+				//节流 可以减少一段时间内事件的触发频率一段时间内无法触发事件
+				//节流阀 节流阀为空表示执行下次操作不为空表示不能执行下次操作
+				//节流阀 当前操作执行完 必须重置节流阀 表示可以执行下次操作了
+				//获取图片
+				var angel= $('#angel')
+				//1.定义节流阀
+				var timer=null;//初始化
+				//绑定 mousemove 事件
+				$(document).on('mousemove',function(e){
+					//3.判断节流阀是否为空如果不为空则证明上次操作时间间隔不足
+					if(timer){
+						return
+					}
+					//开启定时器
+					timer=setTimeout(function(){
+						//设置图片的位置
+						$(angel).css('left',e.pageX+'px').css('top',e.pageY+'px')
+						timer=null//2.鼠标跟随效果结束后 清空timer节流阀。好下次执行
+						console.log('ok')
+					},16)
+					
+				})
+			})
+			//区别
+			//防抖 如果时间被频繁触发，防抖能保证只有一次触发能生效前面n多次的触发都会被忽略
+			//节流 如果时间被频繁触发，节流能够减少事件触发的频率，因此节流是有选择性的执行一部分事件
+				
+		</script>
+	</body>
+</html>

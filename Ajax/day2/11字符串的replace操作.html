@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 需要替换.replace('需要替换内容','替换之后内容')替换字符
+			var str = '<div>我是{{name}}</div>'
+			var pattern = /{{([a-zA-Z]+)}}/
+			var patternResult=pattern.exec(str)//
+			console.log(patternResult)
+			str=str.replace(patternResult[0],patternResult[1])
+			console.log(str)
+		</script>
+	</body>
+</html>

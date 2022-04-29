@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//函数的调用方式
+			//普通函数
+			function fn(){
+				console.log('666')
+			}
+			// fn();
+			// fn.call();
+			//对象函数
+			var o={
+				sayHi:function(){
+					console.log('666')
+				}
+			}
+			o.sayHi();
+			//构造函数
+			function Star(){
+				
+			}
+			new star();
+			//绑定事件函数
+			// btn.onclick=function(){}
+			//定时器函数
+			setInterval(function(){},1000)
+			//立即执行函数
+			(function(){
+				console.log('666')
+			})()
+			//立即执行函数自动调用
+		</script>
+	</body>
+</html>

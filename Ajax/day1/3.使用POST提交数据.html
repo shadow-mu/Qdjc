@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		 <button id="btnPOST">发起POST请求</button>
+		 <script>
+			 // $post(url,[data],[callback])
+			 // url提交数据的地址
+			 //data要提交的数据
+			 //callback提交成功时的回调函数
+			 $(function(){
+				 $('#btnPOST').on('click',function(){
+					 $.post('http://www.liulongbin.top:3006/api/addbook',{bookname:'水浒传',author: '施耐庵', publisher: '天津图书出版社'},function(res){
+						 console.log(res)
+					 })
+				 })
+			 })
+			 
+		 </script>
+	</body>
+</html>

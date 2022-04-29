@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Star(uname,age){
+				this.uname=uname;
+				this.age=age;
+				// this.sing=function(){
+				// 	console.log('我会唱歌')
+				// }
+				
+			}
+			//prototype 原型是一个对象 可以共享方法
+			Star.prototype.sing=function(){
+				console.log('我会唱歌')
+			}
+			var ldh=new Star('刘德华','18')
+			var zxy=new Star('张学友','18')
+			// console.log(ldh.sing===zxy.sing)
+			// console.dir(Star)
+			ldh.sing();
+			zxy.sing();
+			//一般情况下公共属性放在构造函数里面 公共函数放在原型对象身上
+		</script>
+	</body>
+</html>

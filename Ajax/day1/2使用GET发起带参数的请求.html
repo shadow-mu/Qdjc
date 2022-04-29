@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		<button id="btnGETINFO">发起单参数的GET请求</button><strong></strong>
+		<script>
+		$(function(){
+			$('#btnGETINFO').on('click',function(){
+				$.get('http://www.liulongbin.top:3006/api/getbooks',{id:1},function(res){
+					console.log(res)
+				})
+			})
+		})
+		</script>
+	</body>
+</html>

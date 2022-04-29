@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//模板字符串用``符号在tap键上面
+			let name=`张三`
+			let sayhello=`Hello ,名字叫${name}`
+			console.log(sayhello)
+			//模板字符串可以直接解析变量${变量名}
+			//模板字符串中可以换行
+			let result = {
+				name: "zhangsan",
+				age: 20
+			};
+			let html=`
+			<div>
+				<span>${result.name}</span>
+				<span>${result.age}</span>
+			</div>`;
+			console.log(html)
+			//模板字符串可以调用函数${函数()}调用函数位置会返回函数返回值
+			const fn=()=>{return '我是fn函数'}
+			let htmll=`我是模板字符串${fn()}`
+			console.log(htmll)
+		</script>
+	</body>
+</html>

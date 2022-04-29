@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// Set是新的数据结构类似于数组但成员值都是唯一的没有重复值
+			//Set 本身是一个构造函数用来生成Set数据结构
+			//
+			const s1= new Set();
+			console.log(s1.size)
+			//可以传入数组数据
+			const s2=new Set(["a","b"]);
+			console.log(s2.size)
+			//可以数组去重重复的会被过滤掉
+			const s3=new Set(["a","a","b","b"])
+			console.log(s3.size)
+			const ary=[...s3]
+			console.log(ary)
+			// 向set结构中添加值 使用add方法返回Set结构本身
+			const s6=new Set();
+			s6.add('a').add('b')
+			console.log(s6.size)
+			// 从set结构中删除值 用到的方法是delete返回布尔值
+			const r1 =s6.delete('a')
+			console.log(s6.size)
+			console.log(r1)
+			// 判断某一个值是否是set数据结构中的成员 使用has返回布尔值
+			const r2=s6.has('a')
+			console.log(s6.size)
+			console.log(r1)
+			// 清空set数据结构中的值 使用clear方法没有返回值
+			s6.clear();
+			console.log(s6.size)
+			// 遍历set数据结构 从中取值 forEach
+			const s5=new Set(["a","b","c"])
+			s5.forEach(value=> console.log(value))
+			
+			
+		</script>
+	</body>
+</html>

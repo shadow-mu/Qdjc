@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 用于获取对象自身所有的属性
+			
+			var obj = {
+			    id: 1,
+			    pname: '小米',
+			    price: 1999,
+			    num: 2000
+			};
+			// obj.num=1000;
+			// obj.price=999;
+			// console.log(obj)
+			// Object.defineProperty(目标对象，定义或修改属性的名字，目标属性所拥有的特性)
+			// Object.defineProperty(obj,'num',{
+			// 	value:1000
+			// })
+			// console.log(obj)
+			Object.defineProperty(obj,'price',{
+				value:9.9
+			})
+			console.log(obj)
+			// Object.defineProperty(obj,'price',{
+			// 	value:设置属性值,
+			// 	writable:值是否可以重写 true/false 默认false,
+			// 	enumerable:目标属性是否可以被枚举 true/false 默认false,
+			// 	configurable:目标属性是否可以删除或者是否可以再次修改特性true/false 默认false,
+			// })
+			Object.defineProperty(obj,'id',{
+				writable:false ,//不允许重写默认false,s
+				// true允许重写
+			})
+			obj.id=2;
+			console.log(obj)
+			Object.defineProperty(obj,'address',{
+				value:"666",
+				writable:false ,
+				enumerable:false ,//值为false不允许遍历默认值是false
+				configurable:false//值为false不允许删除或者是否可以再次修改特性
+			})
+			console.log(obj)
+			console.log(Object.keys(obj))
+			delete obj.address;
+			delete obj.pname;
+			console.log(obj)
+			// Object.defineProperty(obj,'address',{
+			// 	value:"666",
+			// 	writable:true ,
+			// 	enumerable:true ,//值为false不允许遍历默认值是false
+			// 	configurable:true//值为false不允许删除或者是否可以再次修改特性
+			// }) configurable不可以再次修改特性
+			
+		</script>
+	</body>
+</html>

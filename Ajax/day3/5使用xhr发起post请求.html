@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//创建xhr对象
+			var xhr = new XMLHttpRequest();
+			//调用xhr.open()
+			xhr.open('POST', 'http://www.liulongbin.top:3006/api/addbook')
+			//设置Countent-Type属性 固定写法
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+			//调用xhr.send函数同时指定要发送的数据以查询字符串的形式
+			xhr.send('bookname=人性的弱点&author=叔本华&publisher=北京')
+			//调用xhr.onreadystatechange事件
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					console.log(xhr.responseText)
+				}
+			}
+		</script>
+	</body>
+</html>
