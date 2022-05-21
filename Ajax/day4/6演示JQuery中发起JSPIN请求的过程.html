@@ -11,7 +11,7 @@
 			$(function() {
 				$('#btnJSONP').on('click', function() {
 					$.ajax({
-						url:'http://ajax.frontend.itheima.net:3006/api/jsonp?address=北京&location=顺义',
+						url:'http://localhost:3000/banner',
 						//如果使用$.ajax()发起JSONP请求，必须指定dataType:'jsonp'
 						dataType:'jsonp',
 						//自定义参数的名称

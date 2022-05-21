@@ -24,7 +24,7 @@ body{
 header{
 	padding-left: 0 !important;
 }
-header .logo{
+header .nav{
 	background-color: #3795da;
 }
 .logo img{
@@ -42,7 +42,7 @@ header .logo{
 	line-height: 50px;
 }
 .nav{
-	background-color: #eceeeb;
+	background-color: #nav;
 	border-bottom: 1px solid #ccc;
 }
 .nav a{
